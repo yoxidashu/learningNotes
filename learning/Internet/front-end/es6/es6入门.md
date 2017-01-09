@@ -1,26 +1,29 @@
 # es6 语法
-## 这些是ES6最常用的几个语法，基本上学会它们，我们就可以走遍天下都不怕啦！
+> 这些是ES6最常用的几个语法，基本上学会它们，我们就可以走遍天下都不怕啦！
 ### 声明变量
-   let, const, class, extends, super, arrow functions, template string, destructuring, default, rest arguments
+> let, const, class, extends, super, arrow functions, template string, destructuring, default, rest arguments
 #### let, const，const
-   ES5只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。
-   let：用它所声明的变量，只在let命令所在的代码块内有效。
-   var：var声明的，在全局范围内都有效。
-   const：const也用来声明变量，但是声明的是常量,一般用于第三方库的声明。
+>   ES5只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。
+>   let：用它所声明的变量，只在let命令所在的代码块内有效。
+>   var：var声明的，在全局范围内都有效。
+>   const：const也用来声明变量，但是声明的是常量,一般用于第三方库的声明。
 #### class, extends, super
-   原型、构造函数，继承…你还在为它们复杂难懂的语法而烦恼吗？你还在为指针到底指向哪里而纠结万分吗？
+>   原型、构造函数，继承…你还在为它们复杂难懂的语法而烦恼吗？你还在为指针到底指向哪里而纠结万分吗？
 #### arrow function
-   这个恐怕是ES6最最常用的一个新特性了，用它来写function比原来的写法要简洁清晰很多:
+> 这个恐怕是ES6最最常用的一个新特性了，用它来写function比原来的写法要简洁清晰很多:
+ <div><code>
 function(i){ return i + 1; } //ES5(i) => i + 1 //ES6
    如果方程比较复杂，则需要用{}把代码包起来：
     function(x, y) { 
 	    x++;
 	    y--;    return x + y;
 	}
-   ES6语法
-	(x, y) => {x++; y--; return x+y}
-   除了看上去更简洁以外，arrow function还有一项超级无敌的功能！
-   长期以来，JavaScript语言的this对象一直是一个令人头痛的问题，在对象方法中使用this，必须非常小心。例如：
+	</code>
+</div>
+>   ES6语法
+<code>	(x, y) => {x++; y--; return x+y}</code><br>
+>   除了看上去更简洁以外，arrow function还有一项超级无敌的功能！
+>   长期以来，JavaScript语言的this对象一直是一个令人头痛的问题，在对象方法中使用this，必须非常小心。例如：
     class Animal {
 	constructor(){ 
 	       this.type = 'animal'
@@ -32,7 +35,7 @@ function(i){ return i + 1; } //ES5(i) => i + 1 //ES6
 	    }
 	} var animal = new Animal()
 	 animal.says('hi')  //undefined says hi
-   运行上面的代码会报错，这是因为setTimeout中的this指向的是全局对象。所以为了让它能够正确的运行，传统的解决方法有两种：
+*   运行上面的代码会报错，这是因为setTimeout中的this指向的是全局对象。所以为了让它能够正确的运行，传统的解决方法有两种：
    第一种是将this传给self,再用self来指代this
     says(say){ 
       var self = this;
